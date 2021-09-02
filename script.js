@@ -26,13 +26,23 @@ var passwordPrompt = prompt("Enter your password: ");
 dbUserName = database[0].username;
 dbPassword = database[0].password;
 
-function logIn() {
-    if(userNamePrompt !== dbUserName && passwordPrompt !== dbPassword) {
-        return alert("Invalid username or password !");
+// function logIn() {
+//     if(userNamePrompt !== dbUserName && passwordPrompt !== dbPassword) {
+//         return alert("Invalid username or password !");
+//     } else {
+//         alert("This is your timeline of the day: ");
+//         return console.log(newsfeed);
+//     }
+// }
+
+// logIn();
+
+function signIn(username, password) {
+    if(username === dbUserName && password === dbPassword) {
+        console.log(newsfeed);
     } else {
-        alert("This is your timeline of the day: ");
-        return console.log(newsfeed);
+        alert("Sorry, wrong username and password");
     }
 }
 
-logIn();
+signIn(userNamePrompt, passwordPrompt);
