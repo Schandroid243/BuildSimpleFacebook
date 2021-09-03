@@ -2,7 +2,27 @@ var database = [
     {
         username: "Schandroid243",
         password: "12345"
-    }
+    },
+    {
+        username: "Sally",
+        password: "secrete"
+    },
+    {
+        username: "Bobby",
+        password: "super"
+    },
+    {
+        username: "Bryon Russel",
+        password: "MJ234"
+    },
+    {
+        username: "Larry Bird",
+        password: "goat"
+    },
+    {
+        username: "Peter Belish",
+        password: "0000"
+    },
 ];
 
 var newsfeed = [
@@ -37,8 +57,20 @@ dbPassword = database[0].password;
 
 // logIn();
 
+function isUserValid(username, password) {
+    for (let i = 0; i < database.length; i++) {
+        console.log(database.length);
+        if(database[i].username === username && database[i].password === password) {
+           return true;
+        }
+    }
+    return false;
+}
+
 function signIn(username, password) {
-    if(username === dbUserName && password === dbPassword) {
+
+   var check = isUserValid(username, password);
+    if(check) {
         console.log(newsfeed);
     } else {
         alert("Sorry, wrong username and password");
